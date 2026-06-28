@@ -53,6 +53,8 @@ const API_KEY = '8d64188f';
       const ratingNum = m.imdbRating && m.imdbRating !== 'N/A' ? parseFloat(m.imdbRating) : null;
       const ratingLabel = ratingNum !== null ? ratingNum.toFixed(1) : '—';
       const cls = ratingClass(ratingNum);
+      const hasPlot = m.Plot && m.Plot !== 'N/A';
+      const plotText = hasPlot ? m.Plot : 'No synopsis available for this title.';
 
       return `
         <div class="poster-card">
@@ -62,6 +64,10 @@ const API_KEY = '8d64188f';
               : `<div class="poster-fallback">${escapeHtml(m.Title)}</div>`
             }
             <div class="ticket ${cls}">${ratingLabel}</div>
+            <div class="plot-overlay">
+              <p class="plot-overlay-title">${escapeHtml(m.Title)}</p>
+              <p class="plot-overlay-text">${escapeHtml(plotText)}</p>
+            </div>
           </div>
           <div class="card-body">
             <p class="card-title">${escapeHtml(m.Title)}</p>
