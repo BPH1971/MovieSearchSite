@@ -46,16 +46,17 @@ header{
 
 .brand-row{
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 24px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
   max-width: 1200px;
   margin: 0 auto 18px;
-  flex-wrap: wrap;
+  text-align: center;
 }
 
 .brand-logo{
-  width: 200px;
+  width: 350px;
   display: block;
 }
 
@@ -273,6 +274,44 @@ main{
   font-size: 13px;
   text-align: center;
   padding: 16px;
+}
+
+/* hover overlay revealing the plot synopsis */
+.plot-overlay{
+  position: absolute;
+  inset: 0;
+  background: rgba(244, 247, 251, 0.97); /* opaque white, matches --white */
+  color: #1A2030;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+.poster-card:hover .plot-overlay,
+.poster-card:focus-within .plot-overlay{
+  opacity: 1;
+  pointer-events: auto;
+}
+.plot-overlay-title{
+  font-family: 'Bodoni Moda', serif;
+  font-weight: 700;
+  font-size: 15px;
+  margin: 0 0 10px;
+  color: #0A0F1C;
+}
+.plot-overlay-text{
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0;
+  color: #333A4A;
+}
+
+@media (prefers-reduced-motion: reduce){
+  .plot-overlay{ transition: none; }
 }
 
 /* ticket-stub rating badge — the signature element, now in cool tones */
