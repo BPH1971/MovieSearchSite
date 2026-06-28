@@ -1,0 +1,16 @@
+API Links
+
+https://dev.d24jig8s1lr7n9.amplifyapp.com/
+
+https://omdbapi.com/
+Sent to frozendrifter71
+Here is your key: 8d64188f
+
+Please append it to all of your API requests,
+
+OMDb API: http://www.omdbapi.com/?i=tt3896198&apikey=8d64188f
+
+Click the following URL to activate your key: http://www.omdbapi.com/apikey.aspx?VERIFYKEY=403dad83-9975-451f-b3d1-5ec1ceeac6aa
+If you did not make this request, please disregard this email.
+
+https://github.com/public-apis/public-apis
